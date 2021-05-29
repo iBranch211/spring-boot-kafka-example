@@ -1,4 +1,4 @@
-package com.spring.kafka.model;
+package io.susimsek.kafka.demo.model;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;

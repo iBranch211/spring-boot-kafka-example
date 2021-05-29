@@ -1,4 +1,4 @@
-package com.spring.kafka.config;
+package io.susimsek.kafka.demo.config;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -31,14 +31,6 @@ public class OpenApiConfig {
         return GroupedOpenApi.builder()
                 .group("api")
                 .pathsToMatch("/api/**")
-                .build();
-    }
-
-    @Bean
-    public GroupedOpenApi actuatorApi() {
-        return GroupedOpenApi.builder()
-                .group("actuator")
-                .pathsToMatch("/actuator/**")
                 .build();
     }
 

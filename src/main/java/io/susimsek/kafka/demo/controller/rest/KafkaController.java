@@ -1,10 +1,11 @@
-package com.spring.kafka.controller.rest;
+package io.susimsek.kafka.demo.controller.rest;
 
-import com.spring.kafka.model.User;
-import com.spring.kafka.service.KafKaProducerService;
+import io.susimsek.kafka.demo.model.User;
+import io.susimsek.kafka.demo.service.KafKaProducerService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -26,14 +27,15 @@ public class KafkaController {
     final KafKaProducerService producer;
 
     @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "Ok",content = @Content),
+            @ApiResponse(responseCode = "200", description = "Ok",content = @Content(schema = @Schema(implementation = User.class))),
             @ApiResponse(responseCode = "500", description = "Internal Server Error",content = @Content)
 
     })
     @Operation(summary = "Create User")
     @PostMapping(value = "/users")
     @ResponseStatus(HttpStatus.OK)
-    public void sendMessageToKafkaTopic(@Parameter(description = "User to be created") @Valid @RequestBody User user) {
+    public User sendMessageToKafkaTopic(@Parameter(description = "User to be created") @Valid @RequestBody User user) {
         producer.saveCreateUserLog(user);
+        return user;
     }
 }

@@ -1,13 +1,13 @@
-package com.spring.kafka;
+package io.susimsek.kafka.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootKafkaExampleApplication {
+public class SpringBootKafkaStarterDemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootKafkaExampleApplication.class, args);
+        SpringApplication.run(SpringBootKafkaStarterDemoApplication.class, args);
     }
 
 }

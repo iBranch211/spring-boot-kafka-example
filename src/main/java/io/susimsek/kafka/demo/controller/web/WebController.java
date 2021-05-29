@@ -1,4 +1,4 @@
-package com.spring.kafka.controller.web;
+package io.susimsek.kafka.demo.controller.web;
 
 
 import io.swagger.v3.oas.annotations.Hidden;

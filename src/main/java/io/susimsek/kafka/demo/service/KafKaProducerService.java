@@ -1,7 +1,7 @@
-package com.spring.kafka.service;
+package io.susimsek.kafka.demo.service;
 
-import com.spring.kafka.common.AppConstants;
-import com.spring.kafka.model.User;
+import io.susimsek.kafka.demo.common.AppConstants;
+import io.susimsek.kafka.demo.model.User;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
